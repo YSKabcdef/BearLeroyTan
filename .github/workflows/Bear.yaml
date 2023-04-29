@@ -4,4 +4,4 @@ on:
     Branches:
     - 'feature/v*.*'
     name: Test  
-     = jobs: echo "hello word"
+      jobs: echo "hello word"
