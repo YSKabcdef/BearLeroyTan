@@ -3,3 +3,4 @@ on:
   push:
     Branches:
     - 'feature/v*.*'
+    job: echo "hello word"
