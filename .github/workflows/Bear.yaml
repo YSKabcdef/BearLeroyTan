@@ -8,8 +8,9 @@ jobs:
   My_First:
     runs-on: ubuntu-latest
     steps: 
-    - name: test
-      run: echo date
+    - uses: actions/checkout@v3
+      with:
+        repository: 'https://github.com/YSKabcdef/BearLeroyTan.git'
     - uses: bervProject/railway-deploy@main
       with:
         railway_token: ${{ secrets.RAILWAY_TOKEN }}
