@@ -24,42 +24,56 @@ jobs:
       with:
        #For posting a rich message using Block Kit
         payload: |
-          {
-            "blocks": [
-              {
-                "type": "section",
-                "text": {
-                  "type": "mrkdwn",
-                  "text": "DIPSA 56 CI/CD Submission"
-                }
-              },
-              {
-                "type": "section",
-                "fields": [
-                  {
+            {
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
                     "type": "mrkdwn",
-                    "text": "*Name:* ${{vars.NAME}}"
-                  },
-                  {
-                    "type": "mrkdwn",
-                    "text": "*Email:* ${{vars.EMAIL}}"
-                  },
-                  {
-                    "type": "mrkdwn",
-                    "text": "*Matriculation:*\n ${{vars.MATNUMBER}}"
-                  },
-                  {
-                    "type": "mrkdwn",
-                    "text": "*GitHub Repo:* \n ${{ github.server_url }}/${{ github.repository }}"
-                  },
-                  {
-                    "type": "mrkdwn",
-                    "text": "*RailwayLink:*\n https://tame-furniture-production.up.railway.app/"
+                    "text": "DIPSA 56 CI/CD Submission"
                   }
-                ]
-              }
-            ]
-          }
+                },
+                {
+                  "type": "section",
+                  "fields": [
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Name:* ${{vars.NAME}}"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Email:* ${{vars.EMAIL}}"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Matriculation:*\n ${{vars.MATNUMBER}}"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*GitHub Repo:* \n ${{ github.server_url }}/${{ github.repository }}"
+                    }
+                  ]
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": " https://tame-furniture-production.up.railway.app/"
+                  },
+                  "accessory": {
+                    "type": "button",
+                    "text": {
+                      "type": "plain_text",
+                      "text": "go",
+                      "emoji": true
+                    },
+                    "value": "click_me_123",
+                    "url": "https://tame-furniture-production.up.railway.app/",
+                    "action_id": "button-action"
+                  }
+                }
+              ]
+            }
       env:
         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
