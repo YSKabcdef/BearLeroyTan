@@ -5,4 +5,7 @@ on:
     - 'feature/v*.*'
     name: Test  
     jobs: 
-    - run: echo "hello word"
+      My_First:
+      runs-on: ubuntu-latest
+      steps: 
+      - run: echo "hello word"
