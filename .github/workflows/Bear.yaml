@@ -5,4 +5,4 @@ on:
     - 'feature/v*.*'
     name: Test  
     jobs: 
-    run: echo "hello word"
+    - run: echo "hello word"
