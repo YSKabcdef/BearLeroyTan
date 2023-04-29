@@ -42,11 +42,11 @@ jobs:
                   },
                   {
                     "type": "mrkdwn",
-                    "text": "*Email:* E1112918@u.nus.edu"
+                    "text": "*Email:* ${{vars.EMAIL}}"
                   },
                   {
                     "type": "mrkdwn",
-                    "text": "*Matriculation:*\n A0269535R"
+                    "text": "*Matriculation:*\n ${{vars.MATNUMBER}}"
                   },
                   {
                     "type": "mrkdwn",
