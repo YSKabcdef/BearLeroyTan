@@ -3,10 +3,9 @@ on:
   push:
     Branches:
     - 'feature/v**.*'
-name: Test  
 jobs: 
-My_First:
-  runs-on: ubuntu-latest
-  steps: 
+  My_First:
+    runs-on: ubuntu-latest
+    steps: 
     - name: test
       run: echo date
