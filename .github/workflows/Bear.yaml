@@ -7,6 +7,6 @@ name: Test
 jobs: 
 My_First:
   runs-on: ubuntu-latest
-    steps: 
-      - name: test
-        run: echo "hello word"
+  steps: 
+    - name: test
+      run: echo date
