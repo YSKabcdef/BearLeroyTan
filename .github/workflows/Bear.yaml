@@ -9,7 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     if: startsWith( github.event.head_commit.message , '#NORUN') != true 
     steps:
-    
     - uses: actions/checkout@v3
       with:
         repository: 'YSKabcdef/BearLeroyTan'
@@ -17,4 +16,14 @@ jobs:
       with:
         railway_token: ${{ secrets.RAILWAY_TOKEN }}
         service: "tame-furniture"
-    - run: echo ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+    - name: Send custom JSON data to Slack workflow
+      id: slack
+      uses: slackapi/slack-github-action@v1.23.0
+      with:
+        payload: |
+          {
+          "key": "value",
+          "foo": "bar"
+          }
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
