@@ -58,7 +58,7 @@ jobs:
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": " https://tame-furniture-production.up.railway.app/"
+                  "text": "${{vars.URL}}"
                 },
                 "accessory": {
                   "type": "button",
@@ -68,7 +68,7 @@ jobs:
                     "emoji": true
                   },
                   "value": "click_me_123",
-                  "url": "https://tame-furniture-production.up.railway.app/",
+                  "url": "${{vars.URL}}",
                   "action_id": "button-action"
                 }
               }
