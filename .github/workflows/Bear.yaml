@@ -38,15 +38,15 @@ jobs:
                 "fields": [
                   {
                     "type": "mrkdwn",
-                    "text": "*Name:* Leroy Tan"
+                    "text": "*Name:* $name"
                   },
                   {
                     "type": "mrkdwn",
-                    "text": "*Email:* E1112918@u.nus.e"
+                    "text": "*Email:* E1112918@u.nus.edu"
                   },
                   {
                     "type": "mrkdwn",
-                    "text": "*Matriculation:*\n E1112918"
+                    "text": "*Matriculation:*\n A0269535R"
                   },
                   {
                     "type": "mrkdwn",
