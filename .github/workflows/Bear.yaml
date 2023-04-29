@@ -1,0 +1,5 @@
+name: Bearworking
+on:
+  push:
+    Branches:
+    = 'feature/v*.*'
