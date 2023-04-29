@@ -18,24 +18,48 @@ jobs:
         service: "tame-furniture"
 
     - run: echo ${{secrets.RAILWAY_TOKEN}}
-    #- name: Send custom JSON data to Slack workflow
-     # id: slack
-      #uses: slackapi/slack-github-action@v1.23.0
-      #with:
-      # For posting a rich message using Block Kit
-      #  payload: |
-          #{
-            #"text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}",
-            #"blocks": [
-          #{
-            #"type": "section",
-            #"text": {
-           #   "type": "mrkdwn",
-          #    "text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
-           #         }
-            #        }
-            #]
-         #}
-      # env:
-        #SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-        #SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK 
+    - name: Send custom JSON data to Slack workflow
+      id: slack
+      uses: slackapi/slack-github-action@v1.23.0
+      with:
+       #For posting a rich message using Block Kit
+        payload: |
+          {
+            "blocks": [
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "DIPSA 56 CI/CD Submission"
+                }
+              },
+              {
+                "type": "section",
+                "fields": [
+                  {
+                    "type": "mrkdwn",
+                    "text": "*Name:* Leroy Tan"
+                  },
+                  {
+                    "type": "mrkdwn",
+                    "text": "*Email:* E1112918@u.nus.e"
+                  },
+                  {
+                    "type": "mrkdwn",
+                    "text": "*Matriculation:*\n E1112918"
+                  },
+                  {
+                    "type": "mrkdwn",
+                    "text": "*GitHub Repo:* \n ${{ github.server_url }}/${{ github.repository }}"
+                  },
+                  {
+                    "type": "mrkdwn",
+                    "text": "*RailwayLink:*\n https://tame-furniture-production.up.railway.app/"
+                  }
+                ]
+              }
+            ]
+          }
+          env:
+            SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+            SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
