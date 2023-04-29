@@ -8,7 +8,9 @@ on:
 jobs: 
   My_First:
     runs-on: ubuntu-latest
-    steps: 
+    if: ! startsWith( github.event.head_commit.message , 'WIP') 
+    steps:
+    
     - uses: actions/checkout@v3
       with:
         repository: 'YSKabcdef/BearLeroyTan'
@@ -16,6 +18,5 @@ jobs:
       with:
         railway_token: ${{ secrets.RAILWAY_TOKEN }}
         service: "tame-furniture"
-    if: ! startsWith( "github.event.head_commit.message" , 'WIP')
 
       
