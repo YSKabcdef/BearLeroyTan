@@ -16,6 +16,6 @@ jobs:
       with:
         railway_token: ${{ secrets.RAILWAY_TOKEN }}
         service: "tame-furniture"
-    if: ! startsWith( github.event.head_commit.message , 'WIP')
+    if: ! startsWith( "github.event.head_commit.message" , 'WIP')
 
       
