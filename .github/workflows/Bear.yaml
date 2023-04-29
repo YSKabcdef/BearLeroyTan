@@ -2,7 +2,7 @@ name: Bearworking
 on:
   push:
     Branches:
-    - 'feature/v*.*'
+    - 'feature/v**.*'
 name: Test  
 jobs: 
 My_First:
