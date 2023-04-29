@@ -3,6 +3,7 @@ on:
   push:
     Branches:
     - 'feature/v**.*'
+    - '!feature/v**.*-'
 jobs: 
   My_First:
     runs-on: ubuntu-latest
