@@ -1,0 +1,11 @@
+name: Bearworking
+on:
+  push:
+    Branches:
+    - 'feature/v*.*'
+    name: Test  
+    jobs: 
+      My_First:
+      runs-on: ubuntu-latest
+      steps: 
+      - run: echo "hello word"
