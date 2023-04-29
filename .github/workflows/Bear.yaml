@@ -10,7 +10,7 @@ jobs:
     steps: 
     - uses: actions/checkout@v3
       with:
-        repository: 'https://github.com/YSKabcdef/BearLeroyTan.git'
+        repository: 'YSKabcdef/BearLeroyTan'
     - uses: bervProject/railway-deploy@main
       with:
         railway_token: ${{ secrets.RAILWAY_TOKEN }}
