@@ -48,11 +48,11 @@ jobs:
                     },
                     {
                       "type": "mrkdwn",
-                      "text": "*Metriculation:*\n ${{vars.MATNUMBER}}"
+                      "text": "*Metriculation:* ${{vars.MATNUMBER}}"
                     },
                     {
                       "type": "mrkdwn",
-                      "text": "*GitHub Repo:* \n ${{ github.server_url }}/${{ github.repository }}"
+                      "text": "*GitHub Repo:* ${{ github.server_url }}/${{ github.repository }}"
                     }
                   ]
                 },
