@@ -25,54 +25,57 @@ jobs:
         # This data can be any valid JSON from a previous step in the GitHub Action
         payload: |
           {
-            "blocks": [
-              {
-                "type": "header",
-                "text": {
-                  "type": "mrkdwn",
-                  "text": "DIPSA 56 CI/CD Submission"
-                }
-              },
-              {
-                "type": "section",
-                "fields": [
-                  {
-                    "type": "mrkdwn",
-                    "text": "*Name:* ${{vars.NAME}}"
-                  },
-                  {
-                    "type": "mrkdwn",
-                    "text": "*Email:* ${{vars.EMAIL}}"
-                  },
-                  {
-                    "type": "mrkdwn",
-                    "text": "*Matriculation:* ${{vars.MATNUMBER}}"
-                  },
-                  {
-                    "type": "mrkdwn",
-                    "text": "*Repository:* ${{ github.server_url }}/${{ github.repository }}"
-                  }
-                ]
-              },
-              {
-                "type": "section",
-                "text": {
-                  "type": "mrkdwn",
-                  "text": "${{vars.URL}}"
-                },
-                "accessory": {
-                  "type": "button",
+            {
+              "blocks": [
+                {
+                  "type": "header",
                   "text": {
                     "type": "plain_text",
-                    "text": "go",
+                    "text": "DipSA 56 CI/CD Submission",
                     "emoji": true
+                  }
+                },
+                {
+                  "type": "section",
+                  "fields": [
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Name:* ${{vars.NAME}}"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Email:* ${{vars.EMAIL}}"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Metriculation:*\n ${{vars.MATNUMBER}}"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*GitHub Repo:* \n ${{ github.server_url }}/${{ github.repository }}"
+                    }
+                  ]
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "${{vars.URL}}"
                   },
-                  "value": "click_me_123",
-                  "url": "${{vars.URL}}",
-                  "action_id": "button-action"
+                  "accessory": {
+                    "type": "button",
+                    "text": {
+                      "type": "plain_text",
+                      "text": "Go",
+                      "emoji": true
+                    },
+                    "value": "click_me_123",
+                    "url": "${{vars.URL}}",
+                    "action_id": "button-action"
+                  }
                 }
-              }
-            ]
+              ]
+            }
           }
     env:
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
